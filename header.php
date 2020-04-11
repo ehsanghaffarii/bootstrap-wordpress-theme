@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
 	<meta name="google-site-verification" content="Z3d00O090-rN7Xec_J45k09KDTvzhA4U_5q6177Awkk" />
-	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo( 'stylesheet_directory' ); ?>/font-face.css" />
+	
 <?php wp_head(); ?>
 </head>
 
