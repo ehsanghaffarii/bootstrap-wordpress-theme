@@ -1,10 +1,10 @@
 <?php
 /**
- * WP Bootstrap Starter Theme Customizer
+ * ein bootstrap theme Theme Customizer
  *
  * @package EIN_Bootstrap_Theme
  */
-
+include 'metaboxes.php';
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -269,3 +269,49 @@ function ein_bootstrap_theme_customize_preview_js() {
     wp_enqueue_script( 'ein_bootstrap_theme_customizer', get_template_directory_uri() . '/inc/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'ein_bootstrap_theme_customize_preview_js' );
+
+
+
+
+
+/***************** Article Codex ***********************/
+
+add_action( 'init', 'codex_Article_init' );
+function codex_Article_init() {
+	$labels = array(
+		'name'               => _x( 'مقالات', 'post type general name', 'ein codes' ),
+		'singular_name'      => _x( 'Article', 'post type singular name', 'ein codes' ),
+		'menu_name'          => _x( 'مقالات', 'admin menu', 'ein codes' ),
+		'name_admin_bar'     => _x( 'Article', 'add new on admin bar', 'ein codes' ),
+		'add_new'            => _x( 'Add New', 'Article', 'ein codes' ),
+		'add_new_item'       => __( 'Add New Article', 'ein codes' ),
+		'new_item'           => __( 'New Article', 'ein codes' ),
+		'edit_item'          => __( 'Edit Article', 'ein codes' ),
+		'view_item'          => __( 'View Article', 'ein codes' ),
+		'all_items'          => __( 'All Articles', 'ein codes' ),
+		'search_items'       => __( 'جستجوی مقالات', 'ein codes' ),
+		'parent_item_colon'  => __( 'Parent Articles:', 'ein codes' ),
+		'not_found'          => __( 'No Articles found.', 'ein codes' ),
+		'not_found_in_trash' => __( 'No Articles found in Trash.', 'ein codes' )
+	);
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'مقالات وبسایت', 'ein codes' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'show_in_rest'			=> true,
+		'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'article' ),
+        'taxonomies'         => array( 'category', 'post_tag' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author'  )
+	);
+	register_post_type( 'article', $args );
+}
+
+

@@ -9,31 +9,6 @@
 
 ?>
 
-<?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('
-<p id="breadcrumbs" class="custom-breadcrumbs" >','</p>
-');
-}
-?>
-
-<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php ein_bootstrap_theme_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-
-	</header><!-- .entry-header -->
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
     $enable_vc = get_post_meta(get_the_ID(), '_wpb_vc_js_status', true);

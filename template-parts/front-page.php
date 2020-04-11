@@ -6,15 +6,6 @@
  *
  * @package EIN_Bootstrap_Theme
  */
-
-?>
-
-<?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('
-<p id="breadcrumbs" class="custom-breadcrumbs" >','</p>
-');
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Bootstrap Starter functions and definitions
+ * ein bootstrap theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -19,7 +19,7 @@ function ein_bootstrap_theme_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on WP Bootstrap Starter, use a find and replace
+	 * If you're building a theme based on ein bootstrap theme, use a find and replace
 	 * to change 'ein-bootstrap-theme' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'ein-bootstrap-theme', get_template_directory() . '/languages' );
@@ -66,10 +66,10 @@ function ein_bootstrap_theme_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-    function wp_boostrap_starter_add_editor_styles() {
+    function ein_bootstrap_theme_add_editor_styles() {
         add_editor_style( 'custom-editor-style.css' );
     }
-    add_action( 'admin_init', 'wp_boostrap_starter_add_editor_styles' );
+    add_action( 'admin_init', 'ein_bootstrap_theme_add_editor_styles' );
 
 }
 endif;
@@ -80,10 +80,10 @@ add_action( 'after_setup_theme', 'ein_bootstrap_theme_setup' );
  * Add Welcome message to dashboard
  */
 function ein_bootstrap_theme_reminder(){
-        $theme_page_url = 'https://afterimagedesigns.com/ein-bootstrap-theme/?dashboard=1';
+        $theme_page_url = 'https://afterimagedesigns.com/wp-bootstrap-starter/?dashboard=1';
 
             if(!get_option( 'triggered_welcomet')){
-                $message = sprintf(__( 'Welcome to WP Bootstrap Starter Theme! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'ein-bootstrap-theme' ),
+                $message = sprintf(__( 'Welcome to ein bootstrap theme Theme! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'ein-bootstrap-theme' ),
                     esc_url( $theme_page_url )
                 );
 
@@ -121,10 +121,10 @@ function ein_bootstrap_theme_widgets_init() {
         'name'          => esc_html__( 'Sidebar', 'ein-bootstrap-theme' ),
         'id'            => 'sidebar-1',
         'description'   => esc_html__( 'Add widgets here.', 'ein-bootstrap-theme' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="widget %2$s border rounded-lg">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<h4 class="widget-title bg-secondary p-3 m-0">',
+        'after_title'   => '</h4><div class="text-dark">',
     ) );
     register_sidebar( array(
         'name'          => esc_html__( 'Footer 1', 'ein-bootstrap-theme' ),
@@ -171,7 +171,7 @@ function ein_bootstrap_theme_scripts() {
     }
 	// load bootstrap css
 	// load AItheme styles
-	// load WP Bootstrap Starter styles
+	// load ein bootstrap theme styles
 	wp_enqueue_style( 'ein-bootstrap-theme-style', get_stylesheet_uri() );
     if(get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default') {
         wp_enqueue_style( 'ein-bootstrap-theme-'.get_theme_mod( 'theme_option_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/theme-option/'.get_theme_mod( 'theme_option_setting' ).'.css', false, '' );
@@ -301,8 +301,20 @@ if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
 
-add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
-function disable_gutenberg_editor()
-{
-return false;
+// add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
+// function disable_gutenberg_editor()
+// {
+// return false;
+// }
+
+add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
+add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
+
+function posts_link_attributes() {
+	return 'class="posts-styled-button"';
 }
+
+
+/*** custom post = Gallerys ***/
+
+

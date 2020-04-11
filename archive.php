@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+      <div class="row m-0">
+
 	<section id="primary" class="content-area col-sm-12 col-lg-8">
 		<main id="main" class="site-main" role="main">
 

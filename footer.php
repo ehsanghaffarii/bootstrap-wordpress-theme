@@ -18,9 +18,8 @@
 	<footer id="colophon" class="site-footer <?php echo ein_bootstrap_theme_bg_class(); ?>" role="contentinfo">
 		<div class="container pt-3 pb-3">
             <div class="site-info">
-                &copy; <?php echo date('Y'); ?>
-                <span class="sep"> | </span>
-                Designed and Developed by: <a class="credits" href="https://ehsanghaffarii.ir/" target="_blank" title="EhsanGhaffarii Wordpress Theme Designer" alt="EhsanGhaffarii Website Designer"><?php echo esc_html__('Ehsan Ghaffarii','Ein Graphic'); ?></a>
+				طراحی و اجرا توسط:
+				<a class="credits" href="https://ehsanghaffarii.ir/" target="_blank" title="EhsanGhaffarii Wordpress Theme Designer" alt="EhsanGhaffarii Website Designer"><?php echo esc_html__('احسان غفارلنگرودی','ein-bootstrap-theme'); ?></a>
 
             </div><!-- close .site-info -->
 		</div>

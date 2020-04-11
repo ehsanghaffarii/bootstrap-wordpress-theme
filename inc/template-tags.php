@@ -23,7 +23,7 @@ function ein_bootstrap_theme_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'ein-bootstrap-theme' ),
+		esc_html_x( 'تاریخ ارسال %s', 'post date', 'ein-bootstrap-theme' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 

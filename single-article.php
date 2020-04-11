@@ -1,33 +1,28 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
+ * 
+ * template for single article
+ * 
  * @package EIN_Bootstrap_Theme
+ * 
  */
+get_header();
+// $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+// echo '<img class="rounded-lg" src="'.$src[0].'">';
+the_title( '<h1 class="entry-title border-0">', '</h1>' );
+?>
 
-get_header(); ?>
-
-        <div class="entry-header bg-dark">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title border-0">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
+<?php
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php ein_bootstrap_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
-	</div><!-- .entry-header -->
+
 			<div class="row m-0">
 
-
-	<section id="primary" class="content-area col-sm-9">
+            <section id="primary" class="content-area col-sm-9">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -48,6 +43,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php
+    <?php
 get_sidebar();
 get_footer();

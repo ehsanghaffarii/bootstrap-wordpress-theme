@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name="google-site-verification" content="Z3d00O090-rN7Xec_J45k09KDTvzhA4U_5q6177Awkk" />
+	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo( 'stylesheet_directory' ); ?>/font-face.css" />
 <?php wp_head(); ?>
 </head>
 
@@ -45,7 +47,7 @@
                 'theme_location'    => 'primary',
                 'container'       => 'div',
                 'container_id'    => 'main-nav',
-                'container_class' => 'collapse navbar-collapse justify-content-end',
+                'container_class' => 'collapse navbar-collapse',
                 'menu_id'         => false,
                 'menu_class'      => 'navbar-nav',
                 'depth'           => 3,
@@ -55,34 +57,33 @@
                 ?>
 
             </nav>
+			
         </div>
 	</header><!-- #masthead -->
-    <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
-        <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
-            <div class="container">
-                <h1>
-                    <?php
-                    if(get_theme_mod( 'header_banner_title_setting' )){
-                        echo get_theme_mod( 'header_banner_title_setting' );
-                    }else{
-                        echo 'WordPress + Bootstrap';
-                    }
-                    ?>
-                </h1>
-                <p>
-                    <?php
-                    if(get_theme_mod( 'header_banner_tagline_setting' )){
-                        echo get_theme_mod( 'header_banner_tagline_setting' );
-                }else{
-                        echo esc_html__('To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize','ein_bootstrap_theme');
-                    }
-                    ?>
-                </p>
-                <a href="#content" class="page-scroller"><i class="fa fa-fw fa-angle-down"></i></a>
-            </div>
-        </div>
-    <?php endif; ?>
+
 	<div id="content" class="site-content">
+		<div class="sidebar">
+				
+				<?php
+                wp_nav_menu(array(
+                'theme_location'    => 'primary',
+                'container'       => 'div',
+                'container_id'    => '',
+                'container_class' => 'sidebar-menu-container',
+                'menu_id'         => false,
+                'menu_class'      => 'nav flex-column',
+                'depth'           => 3,
+                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                'walker'          => new wp_bootstrap_navwalker()
+                ));
+                ?>
+				
+				<button class="sidebarBtn">
+					<span></span>
+				</button>
+			</div>
 		<div class="container">
-			<div class="row">
+
                 <?php endif; ?>
+				
+				
