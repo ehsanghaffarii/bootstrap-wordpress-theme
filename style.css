@@ -706,12 +706,11 @@ a img.aligncenter {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
+/* .widget {
     margin: 0 0 1.5em;
     font-size: 0.875rem;
     background: lightslategray;
-    /* Make sure select elements fit in widgets. */
-}
+} */
 
 .widget select {
     max-width: 100%;
@@ -1571,16 +1570,64 @@ a.button:hover,
 	color: seagreen;
 }
 
-.wellcome-text {
-  font-size: 27.778px;
-  font-family: "Aviny";
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: justifyCenter;
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
-  position: absolute;
-  left: 771.003px;
-  top: 395.476px;
-  z-index: 7;
+.list-group-item {
+	display: list-item !important;
+	border: 0;
+	border-bottom: 1px;
+	list-style: square !important;
+}
+
+/**
+ * New Widget Style
+ */
+
+.widget {
+	border-radius: 6px;
+   	background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30); 
+    background: linear-gradient(to right, #243B55, #141E30); 
+	color: white;
+	box-shadow: 5px 10px 20px rgba(0,0,0,.1);
+	margin-bottom: 20px;
+}
+
+.widget h2 {
+	margin-top: 0;
+	color: white;
+	font-size: 1rem;
+}
+
+.widget a {
+	color: rgba(255,255,255,.8);
+}
+
+.widget .card {
+	background: none;
+}
+.rsswidget {
+	padding: 6px 0;
+}
+.rsswidget:hover {
+	text-decoration: none;
+	background: none;
+}
+
+.widget-title.bg-secondary.p-3.m-0 {
+	background: none !important;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.bg-gradiant-1 {
+	background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30); 
+    background: linear-gradient(to right, #243B55, #141E30); 
+
+}
+
+.post-title:hover {
+	color: #333 !important;
+}
+
+.checked {
+	color: gold;
 }

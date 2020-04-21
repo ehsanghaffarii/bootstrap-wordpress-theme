@@ -1,12 +1,14 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for front page
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package EIN_Bootstrap_Theme
  */
+
 ?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
