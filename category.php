@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <header class="entry-header bg-dark">
-    <h1 class="entry-title"><?php echo esc_html__( 'وبلاگ پنجره گلدوین') ?> </h1>
+    <h1 class="entry-title"><?php echo esc_html__( ' مطالب پنجره گلدوین') ?> </h1>
 </header><!-- .page-header -->
 
 <?php
@@ -23,8 +23,7 @@ yoast_breadcrumb('
 <?php
 $args = array(
     'post_type' => 'post',
-	'posts_per_page'       => -1,
-	'cat'
+    'posts_per_page'       => -1,
         );
         $query = new WP_Query( $args );
 
@@ -41,7 +40,10 @@ if($query->have_posts()) { ?>
         while($query->have_posts()) {
             $query->the_post();
             $thumb_id = get_post_thumbnail_id();
-			$thumb_url = wp_get_attachment_image_src($thumb_id,'full',true);
+            $thumb_url = wp_get_attachment_image_src($thumb_id,'full',true);
+            // $type = get_post_meta(get_the_ID(),'article_info_articletype',true);
+            // $date = get_post_meta(get_the_ID(),'article_info_publication-date',true);
+            // $stras = get_post_meta(get_the_ID(),'article_info_stars', true);
             ?>
                 <div class="col">
                     <div class="card mb-1 bg-gradiant-1">
@@ -51,14 +53,10 @@ if($query->have_posts()) { ?>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-2 px-4">
-                                    <h3>
-										<a class="card-title text-warning" href=" <?php echo get_the_permalink(); ?>" > <?php echo get_the_title();?> </a>
-									</h3>
+                                    <h5 class="card-title text-white"> <?php echo get_the_title(); ?> </h5>
                                     <div class="mata-box-content text-white">
-                                        <p class="card-text">نویسنده: <?php echo get_the_author(); ?></p>
-										<p class="card-text"> تاریخ: <?php echo get_the_date() ?></p>
-										 <?php echo get_the_category_list(); ?>
-										 <p class="card-text"> <?php echo get_the_excerpt() ?></p>
+                                        <p class="card-text"> <?php echo get_the_author(); ?></p>
+                                        
                                     </div>
                                     
                                 <a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>" class="btn btn-warning px-4 py-2">دیدن مقاله</a>
