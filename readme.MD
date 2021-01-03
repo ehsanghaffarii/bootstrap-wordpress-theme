@@ -4,7 +4,7 @@ A starter theme for WordPress based on the most powerful frameworks in the world
 
 * You can find demo [here](https://goldupvc.ir/)
 
-## How to use this themes
+## How to use this theme
 
 1. clone this repository to themes directory and install it
 
@@ -12,11 +12,11 @@ A starter theme for WordPress based on the most powerful frameworks in the world
 
 3. active your theme and enjoy
 
-## Desc & Documentation
+## Documentation
 
 Theme Name: Ein Bootstrap Theme
+
 Version: 1.0.0
-Author: EhsanGhaffarii
 
 Requires at least: 4.0
 Tested up to: 4.7
@@ -42,6 +42,10 @@ The best WordPress starter theme based on the most powerful frameworks in the wo
 * Compatible with Elementor Page Builder
 
 This theme will be an active project which we will update from time to time. Check this page regularly for the updates.
+
+#### Author 
+
+[EhsanGhaffarii](http://ehsanghaffarii.ir)
 
 #### Frequently Asked Questions
 
